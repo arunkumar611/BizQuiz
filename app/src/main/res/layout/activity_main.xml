@@ -10,9 +10,22 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.arun.bizquiz.MainActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
     <LinearLayout style="@style/questionSkeleton">
 
         <LinearLayout style="@style/questionSkeletonLayer2Left">
+
+            <TextView
+                style="@style/questionText"
+                android:text="@string/question1" />
+
+            <EditText
+                android:id="@+id/response1"
+                style="@style/answersText"
+                android:hint="Your answer" />
 
         </LinearLayout>
 
@@ -24,8 +37,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="32dp"
                     android:src="@drawable/correct" />
-
-
             </LinearLayout>
 
             <LinearLayout style="@style/questionSkeletonLayer3Right">
@@ -39,6 +50,15 @@
 
         </LinearLayout>
 
+
+    </LinearLayout>
+
+        <Button
+            android:id="@+id/submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
+            android:text="Submit" />
     </LinearLayout>
 
 

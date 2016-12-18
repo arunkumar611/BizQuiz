@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">BizQuiz</string>
+    <string name="question1">1. What is the currency of India?</string>
+
 </resources>
