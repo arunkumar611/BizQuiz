@@ -34,17 +34,18 @@
             <LinearLayout style="@style/questionSkeletonLayer3Right">
 
                 <ImageView
+                    android:id="@+id/rightOrWrongIcon1"
                     android:layout_width="match_parent"
-                    android:layout_height="32dp"
-                    android:src="@drawable/correct" />
+                    android:layout_height="32dp" />
             </LinearLayout>
 
             <LinearLayout style="@style/questionSkeletonLayer3Right">
 
                 <TextView
+                    android:id="@+id/rightOrWrongText1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Correct Answer:" />
+                    android:text="" />
 
             </LinearLayout>
 
@@ -58,7 +59,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/colorAccent"
-            android:text="Submit" />
+            android:onClick="submitQuiz"
+            android:text="Submit"
+            android:textColor="#FFEBEE" />
+
     </LinearLayout>
 
 
