@@ -27,6 +27,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+    /*
+    * submitQuiz method checks the answer one by one and calls the checkAnswer method
+    *
+    */
+
     public void submitQuiz(View v) {
         for (int i = 0; i <= 0; i++) {
             CheckAnswer(i);
@@ -34,6 +39,10 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), "Awesome", Toast.LENGTH_SHORT).show();
     }
 
+    /*
+    * CheckAnswer method runs through the answers one by one, and displays whether the answer is correct or wrong
+    * If wrong, then it displays the correct answer
+    */
     public void CheckAnswer(int questionNumber) {
         int rightOrWrongIconId = getResources().getIdentifier("rightOrWrongIcon" + questionNumber, "id", getPackageName());
         int rightOrWrongTextId = getResources().getIdentifier("rightOrWrongText" + questionNumber, "id", getPackageName());
@@ -59,6 +68,9 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /*
+    * checkTextQuestion method checks whether Text based quiz answers are correct or wrong
+    */
     public void checkTextQuestion() {
         int textResponseId = getResources().getIdentifier("textResponse" + currentTextQuestionNumber, "id", getPackageName());
         EditText textResponseView = (EditText) findViewById(textResponseId);
@@ -76,9 +88,8 @@ public class MainActivity extends AppCompatActivity {
                 }
                 break;
         }
-       currentTextQuestionNumber++;
+        currentTextQuestionNumber++;
     }
-
 
 
 }
