@@ -23,7 +23,7 @@
                 android:text="@string/question1" />
 
             <EditText
-                android:id="@+id/response1"
+                android:id="@+id/textResponse1"
                 style="@style/answersText"
                 android:hint="Your answer" />
 
