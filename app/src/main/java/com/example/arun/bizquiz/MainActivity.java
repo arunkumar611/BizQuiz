@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import static android.R.attr.dial;
 import static android.R.attr.tag;
 
 public class MainActivity extends AppCompatActivity {
@@ -37,15 +38,15 @@ public class MainActivity extends AppCompatActivity {
         int rightOrWrongIconId = getResources().getIdentifier("rightOrWrongIcon" + questionNumber, "id", getPackageName());
         int rightOrWrongTextId = getResources().getIdentifier("rightOrWrongText" + questionNumber, "id", getPackageName());
 
-//        switch (questionType[questionNumber]) {
-//            case "textInput":
-//                checkTextQuestion();
-//                break;
-//            case "checkBox":
-//                break;
-//            case "radioButton":
-//                break;
-//        }
+        switch (questionType[questionNumber]) {
+            case "textInput":
+                checkTextQuestion();
+                break;
+            case "checkBox":
+                break;
+            case "radioButton":
+                break;
+        }
         checkTextQuestion();
         ImageView rightOrWrongIcon = (ImageView) findViewById(rightOrWrongIconId);
         TextView rightOrWrongText = (TextView) findViewById(rightOrWrongTextId);
@@ -63,8 +64,8 @@ public class MainActivity extends AppCompatActivity {
         EditText textResponseView = (EditText) findViewById(textResponseId);
         String textResponse;
         textResponse = textResponseView.getText().toString();
-//        switch (currentTextQuestionNumber) {
-//            case 1:
+        switch (currentTextQuestionNumber) {
+            case 1:
                 textResponse = textResponse.substring(0, Math.min(textResponse.length(), 5));
                 textResponse = textResponse.toLowerCase();
                 if (textResponse.equals("rupee")) {
@@ -73,8 +74,11 @@ public class MainActivity extends AppCompatActivity {
                     isCorrect = false;
                     answer = "Rupees";
                 }
-//                break;
-//        }
+                break;
+        }
        currentTextQuestionNumber++;
     }
+
+
+
 }
