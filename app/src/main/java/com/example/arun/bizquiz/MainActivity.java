@@ -1,6 +1,7 @@
 package com.example.arun.bizquiz;
 
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -20,19 +21,34 @@ public class MainActivity extends AppCompatActivity {
     int currentRadioButtonQuestionNumber = 1;
     boolean isCorrect = false;
     String answer;
+    EditText textResponseView;
+    ImageView rightOrWrongIconView;
+    TextView rightOrWrongTextView;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        EditText textResponseView1 = (EditText) findViewById(R.id.textResponse1);
+        textResponseView = textResponseView1;
+        ImageView rightOrWrongIcon = (ImageView) findViewById(R.id.rightOrWrongIcon1);
+        rightOrWrongIconView = rightOrWrongIcon;
+        TextView rightOrWrongText = (TextView) findViewById(R.id.rightOrWrongText1);
+        rightOrWrongTextView = rightOrWrongText;
     }
 
     /*
     * submitQuiz method checks the answer one by one and calls the checkAnswer method
-    *
     */
-
     public void submitQuiz(View v) {
+//        for (int i = 1; i <= 1; i++) {
+//            int textResponseId = getResources().getIdentifier("textResponse" + i, "id", getPackageName());
+//            EditText textResponseView = (EditText) findViewById(textResponseId);
+//            textResponse[0] = textResponseView.getText().toString();
+//            textResponse[0] = textResponse[0].toLowerCase();
+//        }
+
+        currentTextQuestionNumber = 1;
         for (int i = 0; i <= 0; i++) {
             CheckAnswer(i);
         }
@@ -44,8 +60,8 @@ public class MainActivity extends AppCompatActivity {
     * If wrong, then it displays the correct answer
     */
     public void CheckAnswer(int questionNumber) {
-        int rightOrWrongIconId = getResources().getIdentifier("rightOrWrongIcon" + questionNumber, "id", getPackageName());
-        int rightOrWrongTextId = getResources().getIdentifier("rightOrWrongText" + questionNumber, "id", getPackageName());
+//        int rightOrWrongIconId = getResources().getIdentifier("rightOrWrongIcon" + questionNumber, "id", getPackageName());
+//        int rightOrWrongTextId = getResources().getIdentifier("rightOrWrongText" + questionNumber, "id", getPackageName());
 
         switch (questionType[questionNumber]) {
             case "textInput":
@@ -57,14 +73,13 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
         checkTextQuestion();
-        ImageView rightOrWrongIcon = (ImageView) findViewById(rightOrWrongIconId);
-        TextView rightOrWrongText = (TextView) findViewById(rightOrWrongTextId);
+
         if (isCorrect) {
-            rightOrWrongIcon.setImageResource(R.drawable.correct);
-            rightOrWrongText.setText("You are correct!");
+            rightOrWrongIconView.setImageResource(R.drawable.correct);
+            rightOrWrongTextView.setText("You are correct!");
         } else {
-            rightOrWrongIcon.setImageResource(R.drawable.wrong);
-            rightOrWrongText.setText("Correct answer is" + answer);
+            rightOrWrongIconView.setImageResource(R.drawable.wrong);
+            rightOrWrongTextView.setText("Correct answer is Rupees");
         }
     }
 
@@ -72,15 +87,12 @@ public class MainActivity extends AppCompatActivity {
     * checkTextQuestion method checks whether Text based quiz answers are correct or wrong
     */
     public void checkTextQuestion() {
-        int textResponseId = getResources().getIdentifier("textResponse" + currentTextQuestionNumber, "id", getPackageName());
-        EditText textResponseView = (EditText) findViewById(textResponseId);
-        String textResponse;
-        textResponse = textResponseView.getText().toString();
+        answer = textResponseView.getText().toString();
+        answer = answer.toLowerCase();
         switch (currentTextQuestionNumber) {
             case 1:
-                textResponse = textResponse.substring(0, Math.min(textResponse.length(), 5));
-                textResponse = textResponse.toLowerCase();
-                if (textResponse.equals("rupee")) {
+                answer = answer.substring(0, Math.min(answer.length(), 5));
+                if (answer.equals("rupee")) {
                     isCorrect = true;
                 } else {
                     isCorrect = false;

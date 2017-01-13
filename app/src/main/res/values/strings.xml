@@ -2,5 +2,9 @@
     <string name="app_name">BizQuiz</string>
     <string name="correctAnswer">You are correct!</string>
     <string name="question1">1. What is the currency of India?</string>
-
+    <string name="question2">2. Which of the following country\'s currencies are dollars?</string>
+    <string name="question3">3. Which country had/has million dollar bills?</string>
+    <string name="question4">4. Which of the following countries doesn\'t use euro as their currency?</string>
+    <string name="question5">5. Which continent apart from South America has highest number of countries using peso as currency?</string>
+    <string name="question6">6. What is the currency code of Maldivian Rufiyaa?</string>
 </resources>
