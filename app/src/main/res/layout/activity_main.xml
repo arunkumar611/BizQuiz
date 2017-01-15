@@ -38,6 +38,7 @@
                         android:id="@+id/rightOrWrongIcon1"
                         android:layout_width="match_parent"
                         android:layout_height="32dp" />
+
                 </LinearLayout>
 
                 <LinearLayout style="@style/questionSkeletonLayer3Right">
@@ -49,9 +50,10 @@
                         android:text="" />
 
                 </LinearLayout>
-            </LinearLayout>
-        </LinearLayout>
 
+            </LinearLayout>
+
+        </LinearLayout>
 
         <View
             android:layout_width="match_parent"
@@ -67,9 +69,24 @@
                     android:text="@string/question2" />
 
                 <CheckBox
-                    android:id="@+id/checkBoxResponse1"
+                    android:id="@+id/checkBoxResponse1.1"
                     style="@style/answersText"
-                    android:hint="Your answer" />
+                    android:text="A. United States" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxResponse1.2"
+                    style="@style/answersText"
+                    android:text="B. United Kingdom" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxResponse1.3"
+                    style="@style/answersText"
+                    android:text="C. Singapore" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxResponse1.4"
+                    style="@style/answersText"
+                    android:text="D. Puerto Rico" />
 
             </LinearLayout>
 
@@ -92,15 +109,15 @@
                         android:text="" />
 
                 </LinearLayout>
-            </LinearLayout>
-        </LinearLayout>
 
+            </LinearLayout>
+
+        </LinearLayout>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="@android:color/darker_gray" />
-
 
         <LinearLayout style="@style/questionSkeleton">
 
@@ -110,10 +127,32 @@
                     style="@style/questionText"
                     android:text="@string/question3" />
 
-                <RadioButton
+                <RadioGroup
                     android:id="@+id/radioButtonResponse1"
-                    style="@style/answersText"
-                    android:hint="Your answer" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <RadioButton
+                        android:id="@+id/radioButtonResponse1.1"
+                        style="@style/answersText"
+                        android:text="Somalia" />
+
+                    <RadioButton
+                        android:id="@+id/radioButtonResponse1.2"
+                        style="@style/answersText"
+                        android:text="Zimbabwe" />
+
+                    <RadioButton
+                        android:id="@+id/radioButtonResponse1.3"
+                        style="@style/answersText"
+                        android:text="Argentina" />
+
+                    <RadioButton
+                        android:id="@+id/radioButtonResponse1.4"
+                        style="@style/answersText"
+                        android:text="Mexico" />
+
+                </RadioGroup>
 
             </LinearLayout>
 
@@ -136,9 +175,10 @@
                         android:text="" />
 
                 </LinearLayout>
-            </LinearLayout>
-        </LinearLayout>
 
+            </LinearLayout>
+
+        </LinearLayout>
 
         <View
             android:layout_width="match_parent"
@@ -154,9 +194,24 @@
                     android:text="@string/question4" />
 
                 <CheckBox
-                    android:id="@+id/checkBoxResponse2"
+                    android:id="@+id/checkBoxResponse2.1"
                     style="@style/answersText"
-                    android:hint="Your answer" />
+                    android:text="A. Poland" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxResponse2.2"
+                    style="@style/answersText"
+                    android:text="B. Sweden" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxResponse2.3"
+                    style="@style/answersText"
+                    android:text="C. Spain" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxResponse2.4"
+                    style="@style/answersText"
+                    android:text="D. Switzerland" />
 
             </LinearLayout>
 
@@ -179,7 +234,9 @@
                         android:text="" />
 
                 </LinearLayout>
+
             </LinearLayout>
+
         </LinearLayout>
 
         <View
@@ -221,7 +278,9 @@
                         android:text="" />
 
                 </LinearLayout>
+
             </LinearLayout>
+
         </LinearLayout>
 
         <View
@@ -237,10 +296,32 @@
                     style="@style/questionText"
                     android:text="@string/question6" />
 
-                <RadioButton
+                <RadioGroup
                     android:id="@+id/radioButtonResponse2"
-                    style="@style/answersText"
-                    android:hint="Your answer" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <RadioButton
+                        android:id="@+id/radioButtonResponse2.1"
+                        style="@style/answersText"
+                        android:text="RUF" />
+
+                    <RadioButton
+                        android:id="@+id/radioButtonResponse2.2"
+                        style="@style/answersText"
+                        android:text="MVR" />
+
+                    <RadioButton
+                        android:id="@+id/radioButtonResponse2.3"
+                        style="@style/answersText"
+                        android:text="MRU" />
+
+                    <RadioButton
+                        android:id="@+id/radioButtonResponse2.4"
+                        style="@style/answersText"
+                        android:text="RFH" />
+
+                </RadioGroup>
 
             </LinearLayout>
 
@@ -262,7 +343,9 @@
                         android:layout_height="wrap_content"
                         android:text="" />
                 </LinearLayout>
+
             </LinearLayout>
+
         </LinearLayout>
 
         <View
@@ -291,13 +374,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="32dp"
                 android:background="@color/colorPrimary"
-                android:onClick="submitQuiz"
+                android:onClick="resetQuiz"
                 android:text="Reset"
                 android:textColor="#FFEBEE" />
 
-
         </LinearLayout>
-
 
     </LinearLayout>
 
